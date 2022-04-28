@@ -8,17 +8,24 @@ namespace ShoppingLibrary
 {
     public class ShoppingCartItem //animals
     {
-        public string itemName;
-        public double itemPrice;
+        private string _itemName;
+        private double _itemPrice;
+       // public double subTotal;
         
-        public ShoppingCartItem(string _itemName, double _itemPrice)
+        public string Name
+        {
+            get { return _itemName; }
+        }
+
+        public double Price
+        {
+            get { return _itemPrice; }
+        }
+
+        public ShoppingCartItem(string itemName, double itemPrice)
         {
             _itemName = itemName;
             _itemPrice = itemPrice;
-
-            
-        }
-
-        
+        }        
     }
 }

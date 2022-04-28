@@ -1,23 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 
 namespace ShoppingLibrary
 {
     public class ShoppingCart //zoo
     {
         List<ShoppingCartItem> _ShoppingCartItem = new List<ShoppingCartItem>();
+        //private List<ShoppingCartItems> _ShoppingCartItems;
 
         public ShoppingCart()
         {
-            ShoppingCartItem shoppingCartItem = new ShoppingCartItem("xBox", 3950.99);
-            _ShoppingCartItem.Add(shoppingCartItem);
+           
+        }
+        public void AddItem(ShoppingCartItem item)
+        {
+            _ShoppingCartItem.Add(item);
+        }
 
-            shoppingCartItem = new ShoppingCartItem("PS4", 5999.49);
-            _ShoppingCartItem.Add(shoppingCartItem);
+        public double GetSubTotal()
+        {
+            double total = 0;
 
-            shoppingCartItem = new ShoppingCartItem("Nintendo", 2599.99);
-            _ShoppingCartItem.Add(shoppingCartItem);
+            foreach(ShoppingCartItem shoppingCart in _ShoppingCartItem)
+            {
+                total = total + shoppingCart.Price;
+            }
+            return total;
+        }
+        public double GetVat()
+        {
+            double vat = 0;
 
+            vat += 1.15 * GetSubTotal();
+            
+            return vat;
+        }
+        public List<ShoppingCartItem>GetShoppingCartItems()
+        {
+            return _ShoppingCartItem;   
         }
     }
 }
