@@ -6,11 +6,19 @@ using System.Threading.Tasks;
 
 namespace ShoppingLibrary
 {
-    public class ShoppingCartItem
+    public class ShoppingCartItem //animals
     {
         public string itemName;
-        public string itemPrice;
+        public double itemPrice;
         
+        public ShoppingCartItem(string _itemName, double _itemPrice)
+        {
+            _itemName = itemName;
+            _itemPrice = itemPrice;
 
+            
+        }
+
+        
     }
 }
